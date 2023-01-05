@@ -2,8 +2,14 @@ import { LogLevel, BrowserCacheLocation } from "@azure/msal-browser";
 
 export const msalConfig = {
     auth: {
-        clientId   : "255b3692-6379-41d9-a70a-2e0451689799",
-        authority  : "https://login.microsoftonline.com/410c9be1-35de-42ad-8041-1fdf9413e05b",
+        // SINGLE TENANT
+        // clientId   : "255b3692-6379-41d9-a70a-2e0451689799",
+        // authority  : "https://login.microsoftonline.com/410c9be1-35de-42ad-8041-1fdf9413e05b",
+        
+        // MULTI TENANT + PERSONAL 
+        clientId   : "649cd44f-f433-4e77-8252-ce46ad8759bc",
+        authority  : "https://login.microsoftonline.com/common",
+
         redirectUri: "http://localhost:5173/"
     },
     cache: {
@@ -42,7 +48,8 @@ export const msalConfig = {
 
 export const loginRequest = {
     scopes: [
-        "User.Read"
+        "User.Read",
+        "Mail.Read"
     ]
 };
 

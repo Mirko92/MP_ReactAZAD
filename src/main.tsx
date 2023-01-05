@@ -1,13 +1,29 @@
-import { PublicClientApplication, Logger, LogLevel } from "@azure/msal-browser";
-import { MsalProvider }            from '@azure/msal-react';
+import { MsalProvider } from '@azure/msal-react';
+import { 
+  PublicClientApplication, 
+  LogLevel 
+} from "@azure/msal-browser";
 
 import React                       from "react";
 import ReactDOM                    from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
-import App                         from "./App";
-import { loginRequest, msalConfig }              from "./configs/authConfig";
+import { loginRequest, msalConfig } from "./configs/authConfig";
+
+// Pages
+import Home  from "./pages/Home";
 
 import "./index.css"; 
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+]);
 
 const msalInstance  = new PublicClientApplication({
   ...msalConfig,
@@ -37,7 +53,8 @@ msalInstance
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <MsalProvider instance={msalInstance}>
-      <App />
+      <RouterProvider router={router} />
+      {/* <App /> */}
     </MsalProvider>
   </React.StrictMode>
 );

@@ -1,15 +1,15 @@
 import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal }              from "@azure/msal-react"
 
-import reactLogo        from "./assets/react.svg"
-import azad             from "./assets/az_ad.png"
-import { loginRequest } from "./configs/authConfig"
-import { UserInfo   }   from "./components/UserInfo"
-import { useLoader  }   from "./utils/useLoader"
+import reactLogo        from "../assets/react.svg"
+import azad             from "../assets/az_ad.png"
+import { loginRequest } from "../configs/authConfig"
+import { UserInfo   }   from "../components/UserInfo"
+import { useLoader  }   from "../utils/useLoader"
 
-import "./App.css"
+import "../App.css"
 import { useEffect } from "react"
 
-function App() {
+function Home() {
   const { instance: msApp } = useMsal();
 
   const { loading, handleLoader } = useLoader()
@@ -25,7 +25,9 @@ function App() {
   async function signout() {
     console.log("SignOut", msApp )
 
-    const response = await handleLoader(msApp.logoutPopup())
+    const response = await handleLoader(msApp.logoutPopup({
+      account: msApp.getActiveAccount()
+    }))
 
     console.log("SignOut response: ", response)
   }
@@ -86,4 +88,4 @@ function App() {
   )
 }
 
-export default App
+export default Home
