@@ -46,13 +46,17 @@ export function UserInfo() {
           </div>
         </section>
 
-        <a href="javascript:void(0)" onClick={() => setDisplayAll(!displayAll)}>
-          {
-            displayAll
-              ? <small>Hide</small>
-              : <small>Show all</small>
-          }
-        </a>
+        <div 
+          className="pointer"
+          onClick={() => setDisplayAll(!displayAll)}>
+          <a>
+            {
+              displayAll
+                ? <small>Hide</small>
+                : <small>Show all</small>
+            }
+          </a>
+        </div>
 
         {
           displayAll && 
