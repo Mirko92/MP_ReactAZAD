@@ -5,6 +5,20 @@ import { User } from "../model/User";
 import { callMsGraph } from "../utils/graph_svc";
 import { useLoader } from "../utils/useLoader";
 
+const boxStyle: React.CSSProperties = {
+  textAlign   : "left",
+  borderRadius: "10px",
+  marginTop   : "10px"
+};
+
+const legendStyle: React.CSSProperties = {
+  padding   : "0.25rem 0.5rem",
+  border    : "1px solid white",
+  display   : "flex",
+  gap       : ".5rem",
+  alignItems: "center"
+};
+
 export function UserInfo() {
   const { instance, accounts } = useMsal();
   const { loading, handleLoader } = useLoader();
@@ -30,7 +44,10 @@ export function UserInfo() {
   }
 
   return  <fieldset className="userinfo">
-    <h2>User Info</h2>
+    
+    <legend style={{ ...boxStyle, ...legendStyle }}>
+      User Info
+    </legend>
 
     {
       !loading

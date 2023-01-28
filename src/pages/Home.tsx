@@ -8,6 +8,7 @@ import { useLoader  }   from "../utils/useLoader"
 
 import "../App.css"
 import { useEffect } from "react"
+import { UserEmails } from "../components/UserEmails"
 
 function Home() {
   const { instance: msApp } = useMsal();
@@ -59,6 +60,8 @@ function Home() {
           ? <>
             <AuthenticatedTemplate>
               <UserInfo />
+
+              <UserEmails /> 
 
               <div className="card">
                 <button onClick={signout}>

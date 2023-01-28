@@ -47,6 +47,9 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+button.small {
+  padding: 0.3em 0.6em;
+}
 button:hover {
   border-color: #646cff;
 }
