@@ -1,4 +1,4 @@
-import { Email } from "../model/Email";
+import { Email } from "../model/EmailModel";
 
 interface EmailComponentProps {
   email: Email;

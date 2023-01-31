@@ -1,22 +1,9 @@
 import { useMsal } from "@azure/msal-react";
 import { useState } from "react";
 import { graphConfig, loginRequest } from "../configs/authConfig";
-import { Email } from "../model/Email";
-import { EmailComponent } from "../components/Email";
-
-const boxStyle: React.CSSProperties = {
-  textAlign   : "left",
-  borderRadius: "10px",
-  marginTop   : "10px"
-};
-
-const legendStyle: React.CSSProperties = {
-  padding   : "0.25rem 0.5rem",
-  border    : "1px solid white",
-  display   : "flex",
-  gap       : ".5rem",
-  alignItems: "center"
-};
+import { Email } from "../model/EmailModel";
+import { boxStyle, legendStyle } from "../utils/styles";
+import { EmailComponent } from "./EmailComponent";
 
 export function UserEmails() {
 

@@ -1,0 +1,10 @@
+.TopBar {
+  display: flex;
+  align-items: center;
+
+  .Nav {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+  }
+}

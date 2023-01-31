@@ -10,7 +10,8 @@ export const msalConfig = {
         // clientId   : "649cd44f-f433-4e77-8252-ce46ad8759bc",
         // authority  : "https://login.microsoftonline.com/common",
 
-        redirectUri: "http://localhost:5173/"
+        redirectUri: "http://localhost:5173/",
+        audience: "api://410c9be1-35de-42ad-8041-1fdf9413e05b"
     },
     cache: {
         // This configures where your cache will be stored
@@ -49,7 +50,13 @@ export const msalConfig = {
 export const loginRequest = {
     scopes: [
         "User.Read",
-        "Mail.Read"
+        "Mail.Read",
+    ]
+};
+
+export const myApiRequest = {
+    scopes: [
+        "api://48cc6c57-324b-44f9-b4fe-9961504eb43d/Category.Read" 
     ]
 };
 

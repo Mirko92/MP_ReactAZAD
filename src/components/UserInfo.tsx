@@ -3,21 +3,9 @@ import { useEffect, useState } from "react"
 import { loginRequest } from "../configs/authConfig";
 import { User } from "../model/User";
 import { callMsGraph } from "../utils/graph_svc";
+import { boxStyle, legendStyle } from "../utils/styles";
 import { useLoader } from "../utils/useLoader";
 
-const boxStyle: React.CSSProperties = {
-  textAlign   : "left",
-  borderRadius: "10px",
-  marginTop   : "10px"
-};
-
-const legendStyle: React.CSSProperties = {
-  padding   : "0.25rem 0.5rem",
-  border    : "1px solid white",
-  display   : "flex",
-  gap       : ".5rem",
-  alignItems: "center"
-};
 
 export function UserInfo() {
   const { instance, accounts } = useMsal();
@@ -43,10 +31,24 @@ export function UserInfo() {
     setUser(_user)
   }
 
-  return  <fieldset className="userinfo">
+  async function Signout() {
+    const response = await handleLoader(instance.logoutPopup({
+      account: instance.getActiveAccount()
+    }))
+
+    console.log("SignOut response: ", response)
+  }
+
+  return  <fieldset style={boxStyle}>
     
     <legend style={{ ...boxStyle, ...legendStyle }}>
       User Info
+      {/* <button className="small" title="sign in">&#8815;</button> */}
+      <button 
+        className="small" 
+        title="sign out"
+        onClick={Signout}
+      >&#8814;</button>
     </legend>
 
     {
