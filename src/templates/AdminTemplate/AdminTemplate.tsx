@@ -5,12 +5,12 @@ export function AdminTemplate() {
   return <div>
     <nav className="TopBar">
       <span className="Title">
-      <Link to="/">MS600-APP</Link>
+      <Link to="/App">MS600-APP</Link>
       </span>
 
       <ul className="Nav">
         <li><Link to="/Categories">Categories</Link></li>
-        <li><Link to="/App">App</Link></li>
+        <li><Link to="/Email">Email</Link></li>
       </ul>
     </nav>
 

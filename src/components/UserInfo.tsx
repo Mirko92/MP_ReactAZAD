@@ -7,6 +7,12 @@ import { boxStyle, legendStyle } from "../utils/styles";
 import { useLoader } from "../utils/useLoader";
 
 
+const infoStyle: React.CSSProperties = {
+  maxWidth: "90vw",
+  wordBreak: "break-all",
+  whiteSpace: "break-spaces",
+}
+
 export function UserInfo() {
   const { instance, accounts } = useMsal();
   const { loading, handleLoader } = useLoader();
@@ -79,7 +85,7 @@ export function UserInfo() {
 
         {
           displayAll && 
-          <pre>
+          <pre style={infoStyle}>
             { JSON.stringify(user, null, 2) }
           </pre>
         }

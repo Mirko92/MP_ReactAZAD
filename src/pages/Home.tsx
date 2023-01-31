@@ -1,13 +1,12 @@
-import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal }              from "@azure/msal-react"
+import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal }  from "@azure/msal-react"
 
 import { loginRequest } from "../configs/authConfig"
-import { UserInfo   }   from "../components/UserInfo"
-import { useLoader  }   from "../utils/useLoader"
+import { useLoader    } from "../utils/useLoader"
 
+import { UserInfo  } from "../components/UserInfo"
+import { AppHeader } from "../components/AppHeader"
 import "../App.css"
-import { UserEmails        }  from "../components/UserEmails"
-import { AppHeader         }  from "../components/AppHeader"
-import { CategoryComponent }  from "../components/Category/CategoryComponent"
+
 
 function Home() {
   const { instance } = useMsal();
@@ -33,8 +32,6 @@ function Home() {
           ? <>
             <AuthenticatedTemplate>
               <UserInfo   />
-              <UserEmails /> 
-              <CategoryComponent    />
             </AuthenticatedTemplate>
 
             <UnauthenticatedTemplate>

@@ -1,11 +1,16 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, redirect } from "react-router-dom";
 import { CategoryComponent } from "./components/Category/CategoryComponent";
+import { EmailPage } from "./pages/Email";
 
 // Pages
 import Home from "./pages/Home";
 import { AdminTemplate } from "./templates/AdminTemplate/AdminTemplate";
 
 const router = createBrowserRouter([
+  {
+    path: "/", 
+    loader: () => redirect("/app")
+  },
   {
     path: "/",
     element: <AdminTemplate />,
@@ -17,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/categories",
         element: <CategoryComponent />,
+      },
+      {
+        path: "/email",
+        element: <EmailPage />,
       },
     ] 
   },

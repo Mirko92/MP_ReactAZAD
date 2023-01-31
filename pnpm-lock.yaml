@@ -1,4 +1,4 @@
-lockfileVersion: 5.4
+lockfileVersion: 5.3
 
 specifiers:
   '@azure/msal-browser': ^2.32.1
@@ -16,11 +16,11 @@ specifiers:
 
 dependencies:
   '@azure/msal-browser': 2.32.1
-  '@azure/msal-react': 1.5.1_23rgbx56qscpaw4qjnaj7f2j54
+  '@azure/msal-react': 1.5.1_d6e260dfbe8484f05b904b409f9749ef
   '@microsoft/microsoft-graph-client': 3.0.4_@azure+msal-browser@2.32.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-router-dom: 6.6.1_biqbaboplfbrettd7655fr4n2y
+  react-router-dom: 6.6.1_react-dom@18.2.0+react@18.2.0
 
 devDependencies:
   '@types/react': 18.0.26
@@ -44,7 +44,7 @@ packages:
     engines: {node: '>=0.8.0'}
     dev: false
 
-  /@azure/msal-react/1.5.1_23rgbx56qscpaw4qjnaj7f2j54:
+  /@azure/msal-react/1.5.1_d6e260dfbe8484f05b904b409f9749ef:
     resolution: {integrity: sha512-4R05uUc5x0dHqtHtVGDvQDclOXg/0V1S3PFDnca73UHzlRe+RjeB/zLCY9RbcUiPv8Bdhpvj6KPL54KgaOTdpA==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -617,7 +617,7 @@ packages:
       scheduler: 0.23.0
     dev: false
 
-  /react-router-dom/6.6.1_biqbaboplfbrettd7655fr4n2y:
+  /react-router-dom/6.6.1_react-dom@18.2.0+react@18.2.0:
     resolution: {integrity: sha512-u+8BKUtelStKbZD5UcY0NY90WOzktrkJJhyhNg7L0APn9t1qJNLowzrM9CHdpB6+rcPt6qQrlkIXsTvhuXP68g==}
     engines: {node: '>=14'}
     peerDependencies:

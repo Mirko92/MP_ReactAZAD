@@ -27,7 +27,7 @@ export function UserEmails() {
         headers: headers
     };
 
-    console.log('request made to Graph API at: ' + new Date().toString());
+    console.log(`request made to Graph API at: ${new Date().toString()}`);
 
     fetch(`${graphConfig.baseEndpoint}/me/messages`, options)
         .then(response => response.json())
