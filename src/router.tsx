@@ -3,9 +3,10 @@ import { CategoryComponent } from "./components/Category/CategoryComponent";
 import { AdminTemplate } from "./templates/AdminTemplate/AdminTemplate";
 
 // Pages
-import Home from "./pages/Home";
-import { EmailPage } from "./pages/Email";
+import Home            from "./pages/Home";
+import { EmailPage }   from "./pages/Email";
 import { TokenClaims } from "./pages/TokenClaims/TokenClaims";
+import { OpenAI }      from "./pages/OpenAI/OpenAI";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/email",
         element: <EmailPage />,
+      },
+      {
+        path: "/openai",
+        element: <OpenAI />,
       },
     ] 
   },

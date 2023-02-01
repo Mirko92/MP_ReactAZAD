@@ -12,6 +12,7 @@ export function AdminTemplate() {
         <li><Link to="/Categories">Categories</Link></li>
         <li><Link to="/Email">Email</Link></li>
         <li><Link to="/Token">Token</Link></li>
+        <li><Link to="/OpenAI">Open AI</Link></li>
       </ul>
     </nav>
 
