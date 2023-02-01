@@ -14,16 +14,16 @@ const infoStyle: React.CSSProperties = {
 }
 
 export function UserInfo() {
-  const { instance, accounts } = useMsal();
+  const { instance, accounts }    = useMsal();
   const { loading, handleLoader } = useLoader();
 
-  const [ user, setUser ]            = useState<User>();
-  const [ displayAll, setDisplayAll] = useState<boolean>(false);
+  const [user, setUser] = useState<User>();
+  const [displayAll, setDisplayAll] = useState<boolean>(false);
 
   useEffect(() => {
     fetchUser()
   }, [])
-  
+
   async function fetchUser() {
     const response = await instance.acquireTokenSilent({
       ...loginRequest,
@@ -45,13 +45,13 @@ export function UserInfo() {
     console.log("SignOut response: ", response)
   }
 
-  return  <fieldset style={boxStyle}>
-    
+  return <fieldset style={boxStyle}>
+
     <legend style={{ ...boxStyle, ...legendStyle }}>
       User Info
       {/* <button className="small" title="sign in">&#8815;</button> */}
-      <button 
-        className="small" 
+      <button
+        className="small"
         title="sign out"
         onClick={Signout}
       >&#8814;</button>
@@ -59,40 +59,40 @@ export function UserInfo() {
 
     {
       !loading
-      ? <>
-        <section>
-          <div className="userfield">
-            <span><strong>Name</strong></span>
-            <span><u>{user?.displayName}</u></span>
-          </div>
-          <div className="userfield">
-            <span><strong>Email</strong></span>
-            <span>{user?.userPrincipalName}</span>
-          </div>
-        </section>
+        ? <>
+          <section>
+            <div className="userfield">
+              <span><strong>Name</strong></span>
+              <span><u>{user?.displayName}</u></span>
+            </div>
+            <div className="userfield">
+              <span><strong>Email</strong></span>
+              <span>{user?.userPrincipalName}</span>
+            </div>
+          </section>
 
-        <div 
-          className="pointer"
-          onClick={() => setDisplayAll(!displayAll)}>
-          <a>
-            {
-              displayAll
-                ? <small>Hide</small>
-                : <small>Show all</small>
-            }
-          </a>
-        </div>
+          <div
+            className="pointer"
+            onClick={() => setDisplayAll(!displayAll)}>
+            <a>
+              {
+                displayAll
+                  ? <small>Hide</small>
+                  : <small>Show all</small>
+              }
+            </a>
+          </div>
 
-        {
-          displayAll && 
-          <pre style={infoStyle}>
-            { JSON.stringify(user, null, 2) }
-          </pre>
-        }
-      </>
-      : <>
-      Loading...
-      </>
+          {
+            displayAll &&
+            <pre style={infoStyle}>
+              {JSON.stringify(user, null, 2)}
+            </pre>
+          }
+        </>
+        : <>
+          Loading...
+        </>
     }
   </fieldset>
 }

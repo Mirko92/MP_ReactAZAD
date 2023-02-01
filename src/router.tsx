@@ -1,10 +1,11 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
 import { CategoryComponent } from "./components/Category/CategoryComponent";
-import { EmailPage } from "./pages/Email";
+import { AdminTemplate } from "./templates/AdminTemplate/AdminTemplate";
 
 // Pages
 import Home from "./pages/Home";
-import { AdminTemplate } from "./templates/AdminTemplate/AdminTemplate";
+import { EmailPage } from "./pages/Email";
+import { TokenClaims } from "./pages/TokenClaims/TokenClaims";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/app",
         element: <Home />,
+      },
+      {
+        path: "/token",
+        element: <TokenClaims />,
       },
       {
         path: "/categories",

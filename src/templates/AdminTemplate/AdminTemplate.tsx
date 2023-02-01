@@ -11,6 +11,7 @@ export function AdminTemplate() {
       <ul className="Nav">
         <li><Link to="/Categories">Categories</Link></li>
         <li><Link to="/Email">Email</Link></li>
+        <li><Link to="/Token">Token</Link></li>
       </ul>
     </nav>
 
