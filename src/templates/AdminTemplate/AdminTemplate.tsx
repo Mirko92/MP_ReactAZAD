@@ -22,6 +22,12 @@ export function AdminTemplate() {
 
   <div className="body-wrapper">
     <header className="topbar">
+      <div style={{padding: '1rem'}}>
+        <Link to="/App">
+          <h2>MS600</h2>
+        </Link>
+      </div>
+
       <nav>
         <ul>
           <li><Link to="/Categories">Categories</Link></li>
