@@ -1,13 +1,11 @@
 import { useMsal } from "@azure/msal-react"
 import { useEffect, useState } from "react";
+import { ObjJsonView } from "../../components/ObjJsonView/ObjJsonView";
+import { ObjTableView } from "../../components/ObjTableView/ObjTableView";
+import { TextArea } from "../../components/TextArea/TextArea";
+import { TokenSection } from "../../components/TokenSection/TokenSection";
 import { loginRequest } from "../../configs/authConfig";
 
-const tokenBoxStyle: React.CSSProperties = {
-  width: "50vw",
-  height: "min(50vh, 300px)",
-  overflow: "scroll",
-  wordBreak: "break-all"
-}
 
 export function TokenClaims() {
 
@@ -28,9 +26,8 @@ export function TokenClaims() {
     getToken();
   }, []);
 
-
-  const [ tokenHeader,    setTokenHeader    ] = useState<string>();
-  const [ tokenBody,      setTokenBody      ] = useState<string>();
+  const [ tokenHeader,    setTokenHeader    ] = useState<any>();
+  const [ tokenBody,      setTokenBody      ] = useState<any>();
   const [ tokenSignature, setTokenSignature ] = useState<string>();
   useEffect(() => {
     if (token) {
@@ -43,21 +40,10 @@ export function TokenClaims() {
 
   return <>
 
-    <div style={tokenBoxStyle}>
-      { token || 'isLoading' }
-    </div>
+    <TextArea text={token} isLoading={!token} />
 
-    <section className="header">
-      <h2>Token Header</h2>
-
-      <pre>{JSON.stringify(tokenHeader, null, 2)}</pre>
-    </section>
-
-    <section className="body">
-      <h2>Token Body</h2>
-
-      <pre>{JSON.stringify(tokenBody, null, 2)}</pre>
-    </section>
+    <TokenSection tokenData={tokenHeader} />
+    <TokenSection tokenData={tokenBody}   />
 
     <section className="signatyre">
       <h2>Token Signature</h2>

@@ -45,7 +45,7 @@ export function CategoryComponent() {
         ctgs 
           ? 
           ctgs.map(ctg => 
-            <div className="category">
+            <div className="category" key={ctg.id}>
               <span>{ctg.name}</span>
               <button className="small"> =&gt; </button>
             </div>

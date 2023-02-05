@@ -47,7 +47,7 @@ export function UserEmails() {
     {
       emails?.length 
         ?
-        emails.map(e => <EmailComponent email={e}/>)
+        emails.map(e => <EmailComponent key={e.id} email={e}/>)
         :
         <p>Qui verranno elencate le email dell'utente corrente</p>
     }

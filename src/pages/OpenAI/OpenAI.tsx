@@ -7,7 +7,7 @@ export function OpenAI() {
   async function CallAPI() {
     const headers = new Headers();
 
-    const bearer = `Bearer sk-uU0H4r6PMnSuVckYjz5ASDONEfT3BlbkFJRpWyo19oD2DvUTU7T4bM`;
+    const bearer = `Bearer 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`;
     headers.append("Authorization", bearer);
     headers.append("Content-Type", "application/json");
 

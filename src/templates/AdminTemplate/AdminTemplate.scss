@@ -8,3 +8,84 @@
     list-style: none;
   }
 }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+$topbar-height: 4rem;
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+
+  header.topbar {
+    flex: 0 0 $topbar-height;
+    display: flex;
+    align-items: center;
+
+    background-color: #333;
+    color: #fff;
+    height: $topbar-height;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    nav > ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+      margin: 0;
+      margin-left: 1rem;
+      padding: 0;
+    }
+  }
+
+  .body-wrapper {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100vh;
+
+    main {
+      flex: 1;
+      padding: 20px;
+      overflow: auto;
+    }
+  }
+
+  aside.left-menu {
+    background-color: #f3f3f3;
+    color: #333;
+    flex: 0 0 250px;
+    height: 100%;
+    overflow: auto;
+
+    h2 {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      margin: 0;
+      text-align: center;
+      height: 4rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      a {
+        color: #333;
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+
+        &:hover {
+          background-color: #333;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+}
+

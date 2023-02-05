@@ -7,7 +7,7 @@ import { RouterProvider } from "react-router-dom";
 import router       from "./router";
 import msalInstance from './msal';
 
-import "./index.css"; 
+import "./index.scss"; 
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
