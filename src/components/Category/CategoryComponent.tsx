@@ -1,6 +1,7 @@
 import { useMsal } from "@azure/msal-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { myApiRequest } from "../../configs/authConfig";
+import { LogOnInit } from "../../decorators/LogOnInit";
 import { Category } from "../../model/CategoryModel";
 import { boxStyle, legendStyle } from "../../utils/styles";
 import "./Category.css";
@@ -10,29 +11,38 @@ export function CategoryComponent() {
   const [ ctgs, setCtgs ] = useState<Category[]>();
 
   async function CallAPI() {
-    const response = await instance.acquireTokenSilent({
-      ...myApiRequest,
-      account: accounts[0],
-    });
+    let response ;
+    try {
+      response = await instance.acquireTokenSilent({
+        ...myApiRequest,
+        account: accounts[0],
+      });
 
-    const headers = new Headers();
+      const headers = new Headers();
 
-    const bearer = `Bearer ${response.accessToken}`;
-    headers.append("Authorization", bearer);
+      const bearer = `Bearer ${response.accessToken}`;
+      headers.append("Authorization", bearer);
 
-    const options = {
-        method: "GET",
-        headers: headers
-    };
+      const options = {
+          method: "GET",
+          headers: headers
+      };
 
-    console.log('request made to Custom API at: ' + new Date().toString());
-    console.log("Using token: ", response.accessToken);
+      console.log('request made to Custom API at: ' + new Date().toString());
+      console.log("Using token: ", response.accessToken);
 
-    fetch(`https://localhost:7247/api/Categories`, options)
-        .then(response => response.json())
-        .then(response => setCtgs(response))
-        .catch(console.log);
+      fetch(`https://localhost:7247/api/Categories`, options)
+          .then(response => response.json())
+          .then(response => setCtgs(response))
+          .catch((e) => console.error(e));
+    } catch (error) {
+      console.error("error", error);
+    }
   }
+
+  useEffect(() => {
+    console.log("Category Component On Init");
+  }, []);
 
   return <fieldset style={boxStyle}>
     <legend style={{ ...boxStyle, ...legendStyle }}>

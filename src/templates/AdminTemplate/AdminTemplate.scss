@@ -23,11 +23,13 @@ $topbar-height: 4rem;
     flex: 0 0 $topbar-height;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     background-color: #333;
     color: #fff;
     height: $topbar-height;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
 
     nav > ul {
       display: flex;

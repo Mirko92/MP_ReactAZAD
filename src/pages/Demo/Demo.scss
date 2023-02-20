@@ -1,0 +1,17 @@
+.mySection {
+  padding: 1rem;
+  border: 2px solid greenyellow;
+  border-radius: 10px;
+}
+
+.df {
+  display: flex;
+}
+
+.fr {
+  flex-flow: row nowrap;
+}
+
+.fg1 {
+  gap: 1rem;
+}

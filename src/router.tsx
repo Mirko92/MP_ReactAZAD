@@ -7,6 +7,8 @@ import Home            from "./pages/Home";
 import { EmailPage }   from "./pages/Email";
 import { TokenClaims } from "./pages/TokenClaims/TokenClaims";
 import { OpenAI }      from "./pages/OpenAI/OpenAI";
+import { Demo   }      from "./pages/Demo/Demo";
+import { CategoriesPage } from "./pages/Categories/Categories.Page";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/categories",
-        element: <CategoryComponent />,
+        element: <CategoriesPage />,
       },
       {
         path: "/email",
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/openai",
         element: <OpenAI />,
+      },
+      {
+        path: "/demo",
+        element: <Demo />,
       },
     ] 
   },
