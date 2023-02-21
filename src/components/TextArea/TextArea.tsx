@@ -13,10 +13,10 @@ export function TextArea({ text, isLoading }: TextAreaProps) {
       isLoading
         ? 'isLoading'
         :  text?.split('.')
-                .map( (x,i) => (<>
+                .map( (x,i) => (<span key={`token-part-${i}`}>
                   <span className={`token-part-${i+1}`}>{x}</span>
                   {i < 2 && <span><b>.</b></span>}
-                </>))
+                </span>))
     }
   </div>
 }
