@@ -41,7 +41,7 @@ export function MyTable(props: IMyTableProps) {
 }
 
 export interface IMyColumnProps<T> {
-  children?: (item: any, fieldName: string) => JSX.Element;
+  children?: (item: T, fieldName: keyof T) => JSX.Element;
   name: string;
   fieldName: keyof T; 
 }

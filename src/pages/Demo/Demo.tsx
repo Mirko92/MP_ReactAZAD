@@ -42,14 +42,14 @@ export function Demo() {
         { (i,k) => <b>{i[k]}</b> }
       </MyColumn>
 
-      <MyColumn 
+      <MyColumn<IPerson>
         name="Surname"  
         fieldName="surname"
       >
         { (i,k) => <i>{i[k]}</i> }
       </MyColumn>
 
-      <MyColumn<IPerson>
+      <MyColumn
         name="Address"      
         fieldName="address"
       />
