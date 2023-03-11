@@ -5,6 +5,15 @@ import { ExampleRef } from "./ExampleRef";
 import { MyButton } from "./MyButton";
 import { HOC } from "./HOC";
 import { Section } from "./Section";
+import { MyColumn, MyTable } from "./MyTable/MyTable";
+import { IPerson } from "../../model/IPerson";
+
+const items: IPerson[] = [
+  {name: "Mirko",   surname: "Petrelli",  address: "Da qualche parte 1"},
+  {name: "Silvia",  surname: "Canu",      address: "Da qualche parte 2"},
+  {name: "Linda",   surname: "Bettini",   address: "Da qualche parte 3"},
+  {name: "Monica",  surname: "Cani",      address: "Da qualche parte 4"},
+];
 
 export function Demo() {
 
@@ -25,7 +34,27 @@ export function Demo() {
 
   return <>
     <h1>DEMO</h1>
-    
+
+    <MyTable items={items}>
+      <MyColumn 
+        name="Name"    
+        fieldName="name">
+        { (i,k) => <b>{i[k]}</b> }
+      </MyColumn>
+
+      <MyColumn 
+        name="Surname"  
+        fieldName="surname"
+      >
+        { (i,k) => <i>{i[k]}</i> }
+      </MyColumn>
+
+      <MyColumn<IPerson>
+        name="Address"      
+        fieldName="address"
+      />
+    </MyTable>
+
     <section className="mySection mbl3 df fr fg1">
       <MyButton 
         label   = "On Click with params"
@@ -47,6 +76,7 @@ export function Demo() {
     <Section >
       <HOC />
     </Section>
+
   </>
 }
 

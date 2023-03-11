@@ -17,7 +17,7 @@ interface MyInputProps {
 
 export const MyInput = forwardRef(
   ({ value, onChange }: MyInputProps, ref: any) => {
-    return <> asdasd<input 
+    return <> <input 
       ref       = {ref}
       className = "myInputNumber"
       type      = "text"
