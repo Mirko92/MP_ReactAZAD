@@ -1,0 +1,63 @@
+$cellSize: 50px;
+
+.tic-tac-toe{
+  .row {
+    display: flex;
+  }
+
+  .cell {
+    box-sizing: border-box;
+    width: $cellSize;
+    height: $cellSize;
+    aspect-ratio: 1;
+    border: 1px solid black;
+    display: inline-grid;
+    place-items: center;
+    user-select: none;
+
+    &.filled-X {
+      background-color: rgb(188, 62, 62);
+    }
+
+    &.filled-O {
+      background-color: rgb(153, 176, 41);
+    }
+
+    &.empty {
+      background-color: white;
+    }
+
+    &:hover {
+      border: 3px solid black;
+      cursor: pointer;
+    }
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-c {
+  align-items: center;
+}
+
+.justify-sb{
+  justify-content: space-between;
+}
+
+.justify-c {
+  justify-content: center;
+}
+
+.gap1 {
+  gap: 1rem;
+}
+
+.p1 {
+  padding: 1rem;
+}
+
+.pb1 {
+  padding-block: 1rem;
+}

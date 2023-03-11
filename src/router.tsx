@@ -9,6 +9,7 @@ import { TokenClaims } from "./pages/TokenClaims/TokenClaims";
 import { OpenAI }      from "./pages/OpenAI/OpenAI";
 import { Demo   }      from "./pages/Demo/Demo";
 import { CategoriesPage } from "./pages/Categories/Categories.Page";
+import { Games } from "./pages/Games/Games";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/demo",
         element: <Demo />,
+      },
+      {
+        path: "/games",
+        element: <Games />,
       },
     ] 
   },
