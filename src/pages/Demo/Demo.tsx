@@ -4,9 +4,10 @@ import "./Demo.scss";
 import { ExampleRef } from "./ExampleRef";
 import { MyButton } from "./MyButton";
 import { HOC } from "./HOC";
-import { Section } from "./Section";
+import { Section, SectionHeader } from "./Section";
 import { MyColumn, MyTable } from "./MyTable/MyTable";
 import { IPerson } from "../../model/IPerson";
+import { useBoolean } from "../../utils/MyCustomHooks";
 
 const items: IPerson[] = [
   {name: "Mirko",   surname: "Petrelli",  address: "Da qualche parte 1"},
@@ -32,28 +33,58 @@ export function Demo() {
     console.log("On calc", somma);
   }
 
+
+  const [ booleanValue, { toggle } ] = useBoolean(false);
+
   return <>
     <h1>DEMO</h1>
 
-    <MyTable items={items}>
-      <MyColumn 
-        name="Name"    
-        fieldName="name">
-        { (i,k) => <b>{i[k]}</b> }
-      </MyColumn>
 
-      <MyColumn<IPerson>
-        name="Surname"  
-        fieldName="surname"
-      >
-        { (i,k) => <i>{i[k]}</i> }
-      </MyColumn>
+    <button onClick={toggle}>Toggle</button>
 
-      <MyColumn
-        name="Address"      
-        fieldName="address"
-      />
-    </MyTable>
+    {
+      booleanValue && "CIAO SONO VISIBILE"
+    }
+    
+
+    <Section>
+      <SectionHeader>
+        <h1>Ciao sono SECTION</h1>
+      </SectionHeader>
+
+      <SectionHeader>
+        <h1>Ciao sono SECTION</h1>
+      </SectionHeader>
+
+      <MyTable items={items}>
+        <MyColumn
+          name="Address"      
+          fieldName="address"
+        />
+        
+        <MyColumn 
+          name="Name"    
+          fieldName="name">
+          { (i,k) => <b>{i[k]}</b> }
+        </MyColumn>
+
+        <MyColumn<IPerson>
+          name="Surname"  
+          fieldName="surname"
+        >
+          { (i,k) => <i>{i[k]}</i> }
+        </MyColumn>
+
+        
+        <MyColumn
+          name=""      
+          fieldName=""
+        >
+          {() => <button>Cancella</button>}
+        </MyColumn>
+      </MyTable>
+    </Section>
+
 
     <section className="mySection mbl3 df fr fg1">
       <MyButton 

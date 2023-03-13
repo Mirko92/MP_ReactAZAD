@@ -1,4 +1,5 @@
 import { FormEvent, useEffect, useState } from "react";
+import { IMyColumnProps } from "./MyTable/MyTable";
 
 interface IExampleInternalStateChangesProps {
   a: number;
@@ -48,10 +49,10 @@ export function ExampleInternalStateChanges(props: IExampleInternalStateChangesP
     
     <h3>Handle internal state changes</h3>
 
-    <input type="number" value={a} onChange={(e) => setA(+e.target.value)}/>
-    <input type="number" value={b} onChange={(e) => setB(+e.target.value)}/>
+    <input type="number" value={a} onChange={(e) => setA(+e.target.value)} />
+    <input type="number" value={b} onChange={(e) => setB(+e.target.value)} />
 
-    <button>Somma</button>
+    <button type="submit">Somma</button>
   </form>
 }
 

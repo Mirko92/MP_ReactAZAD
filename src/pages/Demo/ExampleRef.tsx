@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useOnInit } from "./CustomHook";
 import { MyInput } from "./MyInput";
 

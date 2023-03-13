@@ -19,6 +19,6 @@ export function OrangeSquare() {
 
 export function ThreeColoredSquares() {
   return <>{
-    [ "yellow", "#e9e9a0", "white"].map( c => <Square color={c} key={c} />)
+    [ "yellow", "#e9e9a0", "cyan"].map( c => <Square color={c} key={c} />)
   }</>;
 }
