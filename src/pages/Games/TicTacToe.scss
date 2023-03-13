@@ -16,11 +16,13 @@ $cellSize: 50px;
     user-select: none;
 
     &.filled-X {
-      background-color: rgb(188, 62, 62);
+      background-color: #646cff;
+      color: white;
     }
 
     &.filled-O {
-      background-color: rgb(153, 176, 41);
+      background-color: #333;
+      color: white;
     }
 
     &.empty {
@@ -30,6 +32,10 @@ $cellSize: 50px;
     &:hover {
       border: 3px solid black;
       cursor: pointer;
+    }
+
+    &:active {
+      transform: scale(1.05);
     }
   }
 }

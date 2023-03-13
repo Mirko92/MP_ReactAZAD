@@ -4,6 +4,6 @@ export function Games() {
   return <>
     <h1>Games</h1>
 
-    <TicTacToe size={4}/>
+    <TicTacToe size={3}/>
   </>
 }
